@@ -4,47 +4,51 @@
         <head>
              <meta charset="UTF-8">
              <title>Frequent Flyer</title>
-             <!--   comment -->
+			<link rel="stylesheet" href="formStyle.css">
        </head>
 
        <body>
+	   <p id="error"></p>
+	   
+	   <img src="airlineLogo1.png" alt="Airline Logo" height = "75" width = "75">
 		<form>
+			<h1> Frequent Flyer Sign Up</h1>
+			<p> Fields marked with an * are required</p>
+			
 			<fieldset>
-				<legend>Personal Information</legend>
+				
+				<legend><span class="number">1</span>Personal Information</legend>
 				
 				<!--Salutation -->
-				<label for ='salutations'>Salutation</label><br>
+				<label for ='salutations'>Salutation</label>
 				<input type="radio" name="salutations" id="mr" VALUE="Mr" checked="true"/>Mr
 				<input type="radio" name="salutations" id="ms" VALUE="Ms"/>Ms
 				<input type="radio" name="salutations" id="dr" VALUE="Dr"/>Dr
 				<input type="radio" name="salutations" id="rev" VALUE="Rev"/>Rev
 				<input type="radio" name="salutations" id="na" VALUE="N/A"/>N/A
-				<br/><br/>
 				
 				<!--Name -->
-				<label for="firstName">First Name*</label><br/>
-				<input type="text" name="firstName" id="firstName" placeholder="First Name" size="20" required><br/><br/>
+				<label for="firstName">First Name*</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" size="20" required>
 				
-				<label for="lastName">Last Name*</label><br/>
-				<input type="text" name="lastName" id="lastName" placeholder="Last Name" size="20" required><br/>
-				<br/><br/>
+				<label for="lastName">Last Name*</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" size="20" required>
+
 				
 				<!--Address -->
-				<label for ='country'>Country*</label><br>
+				<label for ='country'>Country*</label>
 				<input type="radio" name="country" id="us" value="USA" checked="true" required>USA
 				<input type="radio" name="country" id="ca" value="Canada" required>Canada
-				<br/><br/>
 				
-				<label for="address">Street Address*</label><br/>
+				<label for="address">Street Address*</label>
 				<input type="text" name="address" id="address" placeholder="Address" size="20" required>
-				<br/><br/>
+
 				
-				<label for="city">City*</label><br/>
+				<label for="city">City*</label>
 				<input type="text" name="city" id="city" placeholder="City" size="20" required>
-				<br/><br/>
 				
 				<!--list taken from https://gist.github.com/bzerangue/3083954 -->
-				<label for="state">State*</label><br/>
+				<label for="state">State*</label>
 				<select id="state" name="state" required>
 				<option value="">Select One</option>
 				<optgroup label="U.S. States/Territories">
@@ -116,81 +120,80 @@
 					<option value="SK">Saskatchewan</option>
 					<option value="YT">Yukon Territory</option>
 				</optgroup>
-			</select><br/><br/>
+			</select>
 			
-				<label for="zip">Zip Code*</label><br/>
+				<label for="zip">Zip Code*</label>
 				<input type="text" name="zipcode" id="zipcode" placeholder="Zip Code" size="20" required>
-				<br/><br/>
 				
 				<!--Birthday -->
-				<label for="start">Birthday*</label><br/>
+				<label for="start">Birthday*</label>
 				<input type="date" id="birthday" name="birthday" placeholder="2018-07-22" 
 				min="1900-01-01" max="2020-12-31" required>
 				
 			</fieldset>
-			<br>
+			
 			
 			<fieldset>
-				<legend>Account Information</legend>
+				<legend><span class="number">2</span>Account Information</legend>
 				
 				<!--Email -->
-				<label>Email Address*</label><br>
-				<input type="email" name="email" id="email" placeholder="Email" size="20" required><br><br>
+				<label>Email Address*</label>
+				<input type="email" name="email" id="email" placeholder="Email" size="20" required>
 
 				<!--Phone Number -->
-				<label>Telephone Number 1*</label><br>
-				<input type="tel" name="phone1" id="phone1" placeholder="(xxx)-xxx-xxxx" size="20" required><br>
+				<label>Telephone Number 1*</label>
+				<input type="tel" name="phone1" id="phone1" placeholder="(xxx)-xxx-xxxx" size="20" required>
 
-				<label>Phone number type:</label><br>
+				<label>Phone number type:</label>
 				<input type="radio" name="phoneType1" id="home1" value="Home" checked>Home
 				<input type="radio" name="phoneType1" id="work1" value="Work">Work
-				<input type="radio" name="phoneType1" id="cell1" value="Cell"> Cell<br><br>
+				<input type="radio" name="phoneType1" id="cell1" value="Cell"> Cell
 
-				<label>Telephone Number 2</label><br>
-				<input type="tel" name="phone2" placeholder="(xxx)-xxx-xxxx" size="20"><br>
+				<label>Telephone Number 2</label>
+				<input type="tel" name="phone2" placeholder="(xxx)-xxx-xxxx" size="20">
 
-				<label>Phone number type:</label><br>
+				<label>Phone number type:</label>
 				<input type="radio" name="phoneType2" id="home2" value="Home" checked>Home
 				<input type="radio" name="phoneType2" id="work2" value="Work">Work
-				<input type="radio" name="phoneType2" id="cell2" value="Cell"> Cell<br><br>
+				<input type="radio" name="phoneType2" id="cell2" value="Cell"> Cell
 
 				<!--Password -->
-				<label>Password* (8 characters minimum):<label><br>
+				<label>Password* (8 characters minimum):<label>
 				<input type="password" name="pass" id="pass" placeholder="Password" minlength="8" size="20" required>
 				<input type="password" name="confirm" id="confirm" placeholder="Confirm Password" required>
 
 			</fieldset>
-			<br>
+			
 			
 			<fieldset>
-				<legend>Additional Information</legend>
+				<legend><span class="number">3</span>Additional Information</legend>
 
 				<!--Questions -->
-				<label>How many tickets do you usually book? </label><br>
+				<label>How many tickets do you usually book? </label>
 				<input type="tel" name="ticketField" placeholder="Ticket Number" size="20">
-				<br><br>
+				
 
-				<label>Would you like to recieve text messages?</label><br>
+				<label>Would you like to recieve text messages?</label>
 				<input type="radio" name="textButtons" value="Home" checked>Yes
 				<input type="radio" name="textButtons" value="Work">No
-				<br><br>
+				
 
-				<label>What class(es) are you interested in?</label><br>
-				<input type="checkbox" name="classButtons" id="classButtons" value="Home" checked>Coach
+				<label>What class(es) are you interested in?</label>
+				<input type="checkbox" name="classButtons" id="classButtons" value="Home">Coach
 				<input type="checkbox" name="classButtons" id="classButtons" value="Work">Business
 				<input type="checkbox" name="classButtons" id="classButtons" value="Cell">First
-				<br><br>
+				
 
-				<label>Seat Preference</label><br>
-				<input type="checkbox" name="seatButtons" id="seatButtons" value="Home" checked>Middle
+				<label>Seat Preference</label>
+				<input type="checkbox" name="seatButtons" id="seatButtons" value="Home">Middle
 				<input type="checkbox" name="seatButtons" id="seatButtons" value="Work">Aisle
 				<input type="checkbox" name="seatButtons" id="seatButtons" value="Cell"> Window
-				<br><br>
+				
 
 			</fieldset>
-			<br>
 			
-			<button type="button">Submit</button>
+			
+			<button onclick="validate()">Submit</button>
 
 		</form>
        </body>
@@ -198,5 +201,63 @@
       </html>
 	  
 	  <script>
-	  
+			function validate(){
+				console.log("in the validate function");
+				let birthday = document.getElementById("birthday").value;
+				let email = document.getElementById("email").value;
+				let phone = document.getElementById("phone1").value;
+				
+				if (!validateAge(birthday)){
+					alert("too young");
+				}
+				if (!validateEmail(email)){
+					(alert("invalid email"));
+				}
+				if (!validatePhone(phone)){
+					(alert("invalid phone number"));
+				}
+			}
+			
+			function validateAge(birthday){
+				let birthdayYear = birthday.slice(0,4);
+				let birthdayMonth = birthday.slice(5, 7);
+				let birthdayDay = birthday.slice(9, 11);
+				
+				let d = new Date();
+				let month = d.getUTCMonth() + 1;
+				let day = d.getUTCDate();
+				let year = d.getUTCFullYear() - 18;
+				
+				if(birthdayYear > year){
+					return false;
+				}
+				else if(birthdayYear == year && birthdayMonth > month && birthdayDay > day){
+					return false;
+					}
+				else{
+					return true;
+				}
+			}
+			
+			//function taken and modified from: https://www.w3resource.com/javascript/form/email-validation.php
+			function validateEmail(email){
+				let emailPattern = /^[a-zA-Z0-9.!#$%&'*+\/+?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+				if (emailPattern.test(email)){	
+					return (true)
+				}
+				
+				return (false)
+			}
+				
+			//function taken and modified from: https://www.w3resource.com/javascript/form/phone-no-validation.php
+			function validatePhone(inputPhone){
+				let phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+				if(inputPhone.match(phoneno)){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}			
+			
 	  </script>
